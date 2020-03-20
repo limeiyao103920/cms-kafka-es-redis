@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.lmy.dao.CompanyAnnualCheckDao">
+ 
+	 <insert id="insert" parameterType="CompanyAnnualCheck">
+	 	insert into companyannualcheck values(null,#{keywords},#{description},#{companyName},#{mainBusinessProducts},#{address},#{registeredCapital},#{foundingTime},null,#{annualCheckStatus},null)
+	 </insert>
+	 
+	 <select id="selectAll" resultType="CompanyAnnualCheck">
+	 	select * from companyannualcheck
+	 </select>
+	 
+	 <select id="toUpd" resultType="CompanyAnnualCheck">
+	 	select * from companyannualcheck where id=#{id}
+	 </select>
+	 
+	 <update id="upd">
+	 	update companyannualcheck set annualCheckStatus=#{annualCheckStatus},rmk=#{rmk} where id=#{id}
+	 </update>
+ </mapper>
